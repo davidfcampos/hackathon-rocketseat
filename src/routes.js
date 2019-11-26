@@ -6,6 +6,7 @@ import WorkshopController from './app/controllers/WorkshopController';
 import WorkshopAllController from './app/controllers/WorkshopAllController';
 import StudentController from './app/controllers/StudentController';
 import ClassMentorController from './app/controllers/ClassMentorController';
+import ClassSchoolController from './app/controllers/ClassSchoolController';
 
 const routes = new Router();
 
@@ -23,7 +24,10 @@ routes.post('/workshops', WorkshopController.store);
 routes.get('/students/:school_id', StudentController.index);
 routes.post('/students', StudentController.store);
 
-routes.get('/class/:mentor_id', ClassMentorController.index);
-routes.post('/class/:mentor_id', ClassMentorController.store);
+routes.get('/classMentor/:mentor_id', ClassMentorController.index);
+routes.post('/classMentor/:mentor_id', ClassMentorController.store);
+
+routes.get('/classSchool/:school_id', ClassSchoolController.index);
+routes.post('/classSchool/:school_id', ClassSchoolController.store);
 
 export default routes;
