@@ -1,13 +1,12 @@
 import Sequelize, { Model } from 'sequelize';
 
-class Mentor extends Model {
+class Student extends Model {
   static init(sequelize) {
     super.init(
       {
         name: Sequelize.STRING,
         email: Sequelize.STRING,
         tel: Sequelize.STRING,
-        address: Sequelize.STRING,
         active: Sequelize.BOOLEAN,
       },
       {
@@ -17,6 +16,10 @@ class Mentor extends Model {
 
     return this;
   }
+
+  static associate(models) {
+    this.belongsTo(models.School, { foreignKey: 'school_id' });
+  }
 }
 
-export default Mentor;
+export default Student;

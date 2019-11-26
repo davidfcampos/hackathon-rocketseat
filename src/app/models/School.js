@@ -9,11 +9,14 @@ class School extends Model {
         tel: Sequelize.STRING,
         address: Sequelize.STRING,
         director: Sequelize.STRING,
+        active: Sequelize.BOOLEAN,
       },
       {
         sequelize,
       }
     );
+
+    return this;
   }
 }
 

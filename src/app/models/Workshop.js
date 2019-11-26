@@ -7,6 +7,7 @@ class Workshop extends Model {
         name: Sequelize.STRING,
         point_mentor: Sequelize.INTEGER,
         point_student: Sequelize.INTEGER,
+        active: Sequelize.BOOLEAN,
       },
       {
         sequelize,
