@@ -7,6 +7,7 @@ import WorkshopAllController from './app/controllers/WorkshopAllController';
 import StudentController from './app/controllers/StudentController';
 import ClassMentorController from './app/controllers/ClassMentorController';
 import ClassSchoolController from './app/controllers/ClassSchoolController';
+import InviteController from './app/controllers/InviteController';
 
 const routes = new Router();
 
@@ -29,5 +30,8 @@ routes.post('/classMentor/:mentor_id', ClassMentorController.store);
 
 routes.get('/classSchool/:school_id', ClassSchoolController.index);
 routes.post('/classSchool/:school_id', ClassSchoolController.store);
+
+routes.get('/invites/:id_from/:agent_create', InviteController.index);
+routes.post('/invites', InviteController.store);
 
 export default routes;
